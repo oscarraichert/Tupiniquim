@@ -6,10 +6,10 @@ namespace Tupiniquim.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.Write("Tamanho do grid X: ");
+            Console.Write("Tamanho X da área: ");
             int gridX = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Tamanho do grid Y: ");
+            Console.Write("Tamanho Y da área: ");
             int gridY = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Posição inicial X: ");
@@ -86,9 +86,17 @@ namespace Tupiniquim.ConsoleApp
                     }
                 }
 
+
             }
 
-            Console.Write($"{posiX}, {posiY}, {sentido}");
+            if (posiX > gridX || posiY > gridY)
+            {
+                Console.WriteLine("O robô saiu da área.");
+            }
+            else
+            {
+                Console.Write($"{posiX}, {posiY}, {sentido}");
+            }
         }
     }
 }
